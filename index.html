@@ -9,19 +9,18 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #111, #222);
-            padding-top: 20px;
-            color: #fff;
+            background: linear-gradient(135deg, #87CEEB, #FFFFFF); /* Sky blue fading to white */
+            color: #333;
         }
 
         .container {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
             border-radius: 15px;
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
             text-align: center;
             max-width: 400px;
             width: 100%;
@@ -29,7 +28,7 @@
 
         h2 {
             font-size: 24px;
-            color: #00FF99;
+            color: #1E90FF;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 20px;
@@ -43,22 +42,20 @@
 
         th, td {
             padding: 12px 15px;
-            border: 1px solid #444;
+            border: 1px solid #DDD;
             text-align: center;
             font-size: 16px;
-            color: #fff;
         }
 
         th {
-            background-color: #444;
-            color: #00FF99;
-            text-shadow: 0 0 10px #00FF99;
+            background-color: #F1F1F1;
+            color: #1E90FF;
         }
 
         td input, td select {
-            background: #333;
-            color: #00FF99;
-            border: 1px solid #444;
+            background: #f9f9f9;
+            color: #333;
+            border: 1px solid #ccc;
             padding: 8px 12px;
             font-size: 14px;
             border-radius: 5px;
@@ -70,12 +67,12 @@
 
         td input:focus, td select:focus {
             outline: none;
-            box-shadow: 0 0 5px 3px rgba(0, 255, 255, 0.5);
+            box-shadow: 0 0 5px 3px rgba(30, 144, 255, 0.5);
         }
 
         .add-row {
-            background: #00FF99;
-            color: black;
+            background: #1E90FF;
+            color: white;
             padding: 12px;
             border: none;
             width: 100%;
@@ -87,28 +84,28 @@
         }
 
         .add-row:hover {
-            background: #00cc66;
+            background: #1C86EE;
         }
 
         .meal-input {
             width: 120px;
-            background: #333;
-            color: #00FF99;
-            border: 1px solid #444;
+            background: #f9f9f9;
+            color: #333;
+            border: 1px solid #ccc;
             font-size: 14px;
             padding: 8px;
         }
 
         .messenger-button {
             display: inline-block;
-            background-color: #00FF99;
-            color: black;
-            padding: 15px;
+            background-color: #1E90FF;
+            color: white;
+            padding: 15px 25px;
             text-decoration: none;
             border-radius: 8px;
             font-size: 16px;
             margin-top: 20px;
-            width: 70%;
+            width: 100%;
             text-align: center;
             cursor: pointer;
             text-transform: uppercase;
@@ -118,18 +115,18 @@
         }
 
         .messenger-button:hover {
-            background-color: #00cc66;
+            background-color: #1C86EE;
         }
 
         #travelAmount, #totalAmount {
             font-size: 20px;
-            color: #00FF99;
+            color: #1E90FF;
             font-weight: bold;
         }
 
         label {
             font-size: 18px;
-            color: #fff;
+            color: #333;
         }
 
     </style>
@@ -258,7 +255,7 @@
         function addRow() {
             let table = document.getElementById("dataTable");
             let row = table.insertRow(-1);
-            row.innerHTML = `
+            row.innerHTML = ` 
                 <td><input type="text"></td>
                 <td><input type="text"></td>
                 <td>
