@@ -21,9 +21,8 @@
             padding: 25px;
             border-radius: 15px;
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 400px;
             width: 100%;
+            max-width: 600px;
         }
 
         h2 {
@@ -32,6 +31,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         table {
@@ -55,13 +55,13 @@
         td input, td select {
             background: #f9f9f9;
             color: #333;
-            border: 1px solid #ccc;
+            border: none;
             padding: 8px 12px;
             font-size: 14px;
             border-radius: 5px;
             width: 100%;
             box-sizing: border-box;
-            text-align: center;
+            text-align: left; /* Align text to the left */
             transition: 0.3s ease;
         }
 
@@ -91,9 +91,10 @@
             width: 120px;
             background: #f9f9f9;
             color: #333;
-            border: 1px solid #ccc;
+            border: none;
             font-size: 14px;
             padding: 8px;
+            text-align: left; /* Align text to the left */
         }
 
         .messenger-button {
@@ -105,7 +106,7 @@
             border-radius: 8px;
             font-size: 16px;
             margin-top: 20px;
-            width: 75%;
+            width: 100%;
             text-align: center;
             cursor: pointer;
             text-transform: uppercase;
@@ -127,6 +128,21 @@
         label {
             font-size: 18px;
             color: #333;
+        }
+
+        .left-align {
+            text-align: left; /* Align the labels to the left */
+        }
+
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .input-section div {
+            display: flex;
+            justify-content: space-between;
         }
 
     </style>
@@ -228,22 +244,23 @@
             </tr>
         </table>
         <button class="add-row" onclick="addRow()">+ Add Row</button>
-        <br>
-        <div>
-            <label>TRAVEL: <span id="travelAmount">0</span></label>
-        </div>
-        <div>
-            <label>MEAL: 
-                <select class="meal-input" id="mealAmount" onchange="calculateTotal()">
-                    <option value="0">0</option>
-                    <option value="80">80</option>
-                    <option value="140">140</option>
-                    <option value="240">240</option>
-                </select>
-            </label>
-        </div>
-        <div>
-            <label><b>TOTAL: <span id="totalAmount">0</span></b></label>
+        <div class="input-section">
+            <div>
+                <label class="left-align">TRAVEL: <span id="travelAmount">0</span></label>
+            </div>
+            <div>
+                <label class="left-align">MEAL:
+                    <select class="meal-input" id="mealAmount" onchange="calculateTotal()">
+                        <option value="0">0</option>
+                        <option value="80">80</option>
+                        <option value="140">140</option>
+                        <option value="240">240</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label class="left-align"><b>TOTAL: <span id="totalAmount">0</span></b></label>
+            </div>
         </div>
 
         <a href="https://m.me/ahsey.embile#" target="_blank" class="messenger-button">
@@ -281,43 +298,6 @@
             document.getElementById("travelAmount").innerText = travelTotal;
             let mealAmount = Number(document.getElementById("mealAmount").value);
             document.getElementById("totalAmount").innerText = travelTotal + mealAmount;
-        }
-
-        function takeScreenshot() {
-            if (navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia) {
-                navigator.mediaDevices.getDisplayMedia({ video: true })
-                    .then(stream => {
-                        const canvas = document.createElement("canvas");
-                        const video = document.createElement("video");
-                        video.srcObject = stream;
-
-                        video.onloadedmetadata = () => {
-                            video.play();
-                            const width = video.videoWidth;
-                            const height = video.videoHeight;
-                            canvas.width = width;
-                            canvas.height = height;
-
-                            const context = canvas.getContext("2d");
-                            context.drawImage(video, 0, 0, width, height);
-
-                            canvas.toBlob(blob => {
-                                const url = URL.createObjectURL(blob);
-                                const link = document.createElement('a');
-                                link.href = url;
-                                link.download = 'screenshot.png';
-                                link.click();
-                            });
-
-                            stream.getTracks().forEach(track => track.stop());
-                        };
-                    })
-                    .catch(error => {
-                        console.error('Error capturing the screen: ', error);
-                    });
-            } else {
-                alert("Screen capture is not supported in your browser.");
-            }
         }
     </script>
 </body>
