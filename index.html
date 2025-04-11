@@ -205,22 +205,13 @@
         </tr>
       </thead>
       <tbody>
-        <!-- 6 Rows Here -->
-        ${[...Array(6)].map(() => `
-        <tr>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td>
-            <select>
-              <option>🚌 BUS</option>
-              <option>🚖 TAXI</option>
-              <option>🛺 TRICYCLE</option>
-              <option>🚋 TRAIN/LRT/MRT</option>
-              <option>🚍 JEEP</option>
-            </select>
-          </td>
-          <td><input type="number" value="0" oninput="calculateTotal()" /></td>
-        </tr>`).join("")}
+        <!-- Initial 6 rows -->
+        <tr><td><input type="text" /></td><td><input type="text" /></td><td><select><option>🚌 BUS</option><option>🚖 TAXI</option><option>🛺 TRICYCLE</option><option>🚋 TRAIN/LRT/MRT</option><option>🚍 JEEP</option></select></td><td><input type="number" value="0" oninput="calculateTotal()" /></td></tr>
+        <tr><td><input type="text" /></td><td><input type="text" /></td><td><select><option>🚌 BUS</option><option>🚖 TAXI</option><option>🛺 TRICYCLE</option><option>🚋 TRAIN/LRT/MRT</option><option>🚍 JEEP</option></select></td><td><input type="number" value="0" oninput="calculateTotal()" /></td></tr>
+        <tr><td><input type="text" /></td><td><input type="text" /></td><td><select><option>🚌 BUS</option><option>🚖 TAXI</option><option>🛺 TRICYCLE</option><option>🚋 TRAIN/LRT/MRT</option><option>🚍 JEEP</option></select></td><td><input type="number" value="0" oninput="calculateTotal()" /></td></tr>
+        <tr><td><input type="text" /></td><td><input type="text" /></td><td><select><option>🚌 BUS</option><option>🚖 TAXI</option><option>🛺 TRICYCLE</option><option>🚋 TRAIN/LRT/MRT</option><option>🚍 JEEP</option></select></td><td><input type="number" value="0" oninput="calculateTotal()" /></td></tr>
+        <tr><td><input type="text" /></td><td><input type="text" /></td><td><select><option>🚌 BUS</option><option>🚖 TAXI</option><option>🛺 TRICYCLE</option><option>🚋 TRAIN/LRT/MRT</option><option>🚍 JEEP</option></select></td><td><input type="number" value="0" oninput="calculateTotal()" /></td></tr>
+        <tr><td><input type="text" /></td><td><input type="text" /></td><td><select><option>🚌 BUS</option><option>🚖 TAXI</option><option>🛺 TRICYCLE</option><option>🚋 TRAIN/LRT/MRT</option><option>🚍 JEEP</option></select></td><td><input type="number" value="0" oninput="calculateTotal()" /></td></tr>
       </tbody>
     </table>
 
@@ -281,4 +272,6 @@
 
     // Calculate on load
     calculateTotal();
- 
+  </script>
+</body>
+</html>
