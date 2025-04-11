@@ -153,8 +153,10 @@
 <body>
   <div class="container">
     <h2>SYSTECH DIGITAL LIQUIDATION</h2>
-    <br><br>
+    <br>
+    <br>
 
+    <!-- Repair Form Info -->
     <div class="form-info">
       <div class="info-row">
         <label>Name:</label>
@@ -193,23 +195,20 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Default 6 rows -->
-        ${[...Array(6)].map(() => `
-          <tr>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
-            <td>
-              <select>
-                <option>🚎 BUS</option>
-                <option>🚖 TAXI</option>
-                <option>🛺 TRICYCLE</option>
-                <option>🚋 TRAIN/LRT/MRT</option>
-                <option>🚍 JEEP</option>
-              </select>
-            </td>
-            <td><input type="number" value="0" oninput="calculateTotal()" /></td>
-          </tr>
-        `).join('')}
+        <tr>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td>
+            <select>
+              <option>🚎 BUS</option>
+              <option>🚖 TAXI</option>
+              <option>🛺 TRICYCLE</option>
+              <option>🚋 TRAIN/LRT/MRT</option>
+              <option>🚍 JEEP</option>
+            </select>
+          </td>
+          <td><input type="number" value="0" oninput="calculateTotal()" /></td>
+        </tr>
       </tbody>
     </table>
 
@@ -240,7 +239,7 @@
     function addRow() {
       const table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
       const newRow = table.insertRow();
-      newRow.innerHTML = `
+      newRow.innerHTML = 
         <td><input type="text" /></td>
         <td><input type="text" /></td>
         <td>
@@ -253,7 +252,7 @@
           </select>
         </td>
         <td><input type="number" value="0" oninput="calculateTotal()" /></td>
-      `;
+      ;
       calculateTotal();
     }
 
@@ -267,9 +266,6 @@
       let mealAmount = Number(document.getElementById("mealAmount").value);
       document.getElementById("totalAmount").innerText = travelTotal + mealAmount;
     }
-
-    // Trigger initial total calculation
-    window.onload = calculateTotal;
   </script>
 </body>
 </html>
