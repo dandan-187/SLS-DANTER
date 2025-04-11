@@ -114,21 +114,33 @@
     }
 
     .input-section label {
-      font-size: 18px;
+      font-size: 22px;
+      font-weight: bold;
       color: #333;
     }
 
-    #travelAmount, #totalAmount {
-      font-size: 20px;
+    #travelAmount,
+    #totalAmount {
+      font-size: 28px;
       color: #1E90FF;
       font-weight: bold;
     }
 
-    .meal-input {
-      padding: 8px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 14px;
+    #mealAmount {
+      font-size: 24px;
+      font-weight: bold;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: none;
+      border: none;
+      padding: 5px 10px;
+      color: #1E90FF;
+      cursor: pointer;
+    }
+
+    .meal-input option {
+      font-size: 18px;
     }
 
     .messenger-button {
@@ -229,12 +241,6 @@
       <label><b>TOTAL: <span id="totalAmount">0</span></b></label>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <!-- Messenger Button -->
     <a href="https://m.me/ahsey.embile#" target="_blank" class="messenger-button">
       Send to Ma'am Irene
@@ -275,5 +281,4 @@
 
     // Calculate on load
     calculateTotal();
-  </script>
-</body
+ 
