@@ -1,304 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYSTECH LIQUIDATION SYSTEM</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #87CEEB, #FFFFFF); /* Sky blue fading to white */
-            color: #333;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 600px;
-        }
-
-        h2 {
-            font-size: 24px;
-            color: #1E90FF;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            border: 1px solid #DDD;
-            text-align: center;
-            font-size: 16px;
-        }
-
-        th {
-            background-color: #F1F1F1;
-            color: #1E90FF;
-        }
-
-        td input, td select {
-            background: #f9f9f9;
-            color: #333;
-            border: none;
-            padding: 8px 12px;
-            font-size: 14px;
-            border-radius: 5px;
-            width: 100%;
-            box-sizing: border-box;
-            text-align: left; /* Align text to the left */
-            transition: 0.3s ease;
-        }
-
-        td input:focus, td select:focus {
-            outline: none;
-            box-shadow: 0 0 5px 3px rgba(30, 144, 255, 0.5);
-        }
-
-        .add-row {
-            background: #1E90FF;
-            color: white;
-            padding: 12px;
-            border: none;
-            width: 100%;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: 0.3s ease;
-            margin-top: 20px;
-        }
-
-        .add-row:hover {
-            background: #1C86EE;
-        }
-
-        .meal-input {
-            width: 120px;
-            background: #f9f9f9;
-            color: #333;
-            border: none;
-            font-size: 14px;
-            padding: 8px;
-            text-align: left; /* Align text to the left */
-        }
-
-        .messenger-button {
-            display: inline-block;
-            background-color: #1E90FF;
-            color: white;
-            padding: 15px 25px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 16px;
-            margin-top: 20px;
-            width: 75%;
-            text-align: center;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: 0.3s ease;
-        }
-
-        .messenger-button:hover {
-            background-color: #1C86EE;
-        }
-
-        #travelAmount, #totalAmount {
-            font-size: 20px;
-            color: #1E90FF;
-            font-weight: bold;
-        }
-
-        label {
-            font-size: 18px;
-            color: #333;
-        }
-
-        .left-align {
-            text-align: left; /* Align the labels to the left */
-        }
-
-        .input-section {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .input-section div {
-            display: flex;
-            justify-content: space-between;
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYSTECH LIQUIDATION SYSTEM</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #87CEEB, #FFFFFF);
+      color: #333;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+    h2 {
+      font-size: 24px;
+      color: #1E90FF;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid #DDD;
+      text-align: center;
+      font-size: 16px;
+    }
+    th {
+      background-color: #F1F1F1;
+      color: #1E90FF;
+    }
+    td input, td select {
+      background: #f9f9f9;
+      color: #333;
+      border: none;
+      padding: 8px 12px;
+      font-size: 14px;
+      border-radius: 5px;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: left;
+      transition: 0.3s ease;
+    }
+    td input:focus, td select:focus {
+      outline: none;
+      box-shadow: 0 0 5px 3px rgba(30, 144, 255, 0.5);
+    }
+    .add-row {
+      background: #1E90FF;
+      color: white;
+      padding: 12px;
+      border: none;
+      width: 100%;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s ease;
+      margin-top: 20px;
+    }
+    .add-row:hover {
+      background: #1C86EE;
+    }
+    .meal-input {
+      width: 120px;
+      background: #f9f9f9;
+      color: #333;
+      border: none;
+      font-size: 14px;
+      padding: 8px;
+      text-align: left;
+    }
+    .messenger-button {
+      display: inline-block;
+      background-color: #1E90FF;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 20px;
+      width: 75%;
+      text-align: center;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s ease;
+    }
+    .messenger-button:hover {
+      background-color: #1C86EE;
+    }
+    #travelAmount, #totalAmount {
+      font-size: 20px;
+      color: #1E90FF;
+      font-weight: bold;
+    }
+    label {
+      font-size: 18px;
+      color: #333;
+    }
+    .left-align {
+      text-align: left;
+    }
+    .input-section {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .input-section div {
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2><b>SYSTECH LIQUIDATION SYSTEM</b></h2>
-        <table id="dataTable">
+  <div class="container">
+    <h2><b>SYSTECH LIQUIDATION SYSTEM</b></h2>
+    <table id="dataTable">
+      <tr>
+        <th>FROM</th>
+        <th>TO</th>
+        <th>MOT</th>
+        <th>AMT</th>
+      </tr>
+      <!-- 6 rows -->
+      <script>
+        for (let i = 0; i < 6; i++) {
+          document.write(`
             <tr>
-                <th>FROM</th>
-                <th>TO</th>
-                <th>MOT</th>
-                <th>AMT</th>
+              <td><input type="text"></td>
+              <td><input type="text"></td>
+              <td>
+                <select>
+                  <option>🚌 BUS</option>
+                  <option>🚖 TAXI</option>
+                  <option>🛺 TRICYCLE</option>
+                  <option>🚋 TRAIN/LRT/MRT</option>
+                  <option>🚍 JEEP</option>
+                </select>
+              </td>
+              <td><input type="number" value="0" oninput="calculateTotal()"></td>
             </tr>
-            <!-- Add initial 6 rows -->
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td>
-                    <select>
-                        <option>🚌 BUS</option>
-                        <option>🚖 TAXI</option>
-                        <option>🛺 TRICYCLE</option>
-                        <option>🚋 TRAIN/LRT/MRT</option>
-                        <option>🚍 JEEP</option>
-                    </select>
-                </td>
-                <td><input type="number" value="0"></td>
-            </tr>
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td>
-                    <select>
-                        <option>🚌 BUS</option>
-                        <option>🚖 TAXI</option>
-                        <option>🛺 TRICYCLE</option>
-                        <option>🚋 TRAIN/LRT/MRT</option>
-                        <option>🚍 JEEP</option>
-                    </select>
-                </td>
-                <td><input type="number" value="0"></td>
-            </tr>
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td>
-                    <select>
-                        <option>🚌 BUS</option>
-                        <option>🚖 TAXI</option>
-                        <option>🛺 TRICYCLE</option>
-                        <option>🚋 TRAIN/LRT/MRT</option>
-                        <option>🚍 JEEP</option>
-                    </select>
-                </td>
-                <td><input type="number" value="0"></td>
-            </tr>
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td>
-                    <select>
-                        <option>🚌 BUS</option>
-                        <option>🚖 TAXI</option>
-                        <option>🛺 TRICYCLE</option>
-                        <option>🚋 TRAIN/LRT/MRT</option>
-                        <option>🚍 JEEP</option>
-                    </select>
-                </td>
-                <td><input type="number" value="0"></td>
-            </tr>
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td>
-                    <select>
-                        <option>🚌 BUS</option>
-                        <option>🚖 TAXI</option>
-                        <option>🛺 TRICYCLE</option>
-                        <option>🚋 TRAIN/LRT/MRT</option>
-                        <option>🚍 JEEP</option>
-                    </select>
-                </td>
-                <td><input type="number" value="0"></td>
-            </tr>
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td>
-                    <select>
-                        <option>🚌 BUS</option>
-                        <option>🚖 TAXI</option>
-                        <option>🛺 TRICYCLE</option>
-                        <option>🚋 TRAIN/LRT/MRT</option>
-                        <option>🚍 JEEP</option>
-                    </select>
-                </td>
-                <td><input type="number" value="0"></td>
-            </tr>
-        </table>
-        <button class="add-row" onclick="addRow()">+ Add Row</button>
-        <div class="input-section">
-            <div>
-                <label class="left-align">TRAVEL: <span id="travelAmount">0</span></label>
-            </div>
-            <div>
-                <label class="left-align">MEAL:
-                    <select class="meal-input" id="mealAmount" onchange="calculateTotal()">
-                        <option value="0">0</option>
-                        <option value="80">80</option>
-                        <option value="140">140</option>
-                        <option value="240">240</option>
-                    </select>
-                </label>
-            </div>
-            <div>
-                <label class="left-align"><b>TOTAL: <span id="totalAmount">0</span></b></label>
-            </div>
-        </div>
-
-        <a href="https://m.me/ahsey.embile#" target="_blank" class="messenger-button">
-            Send to Ma'am Irene
-        </a>
+          `);
+        }
+      </script>
+    </table>
+    <button class="add-row" onclick="addRow()">+ Add Row</button>
+    <div class="input-section">
+      <div>
+        <label class="left-align">TRAVEL: <span id="travelAmount">0</span></label>
+      </div>
+      <div>
+        <label class="left-align">MEAL:
+          <select class="meal-input" id="mealAmount" onchange="calculateTotal()">
+            <option value="0">0</option>
+            <option value="80">80</option>
+            <option value="140">140</option>
+            <option value="240">240</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label class="left-align"><b>TOTAL: <span id="totalAmount">0</span></b></label>
+      </div>
     </div>
+    <a href="https://m.me/ahsey.embile#" target="_blank" class="messenger-button">Send to Ma'am Irene</a>
+  </div>
 
-    <script>
-        function addRow() {
-            let table = document.getElementById("dataTable");
-            let row = table.insertRow(-1);
-            row.innerHTML = ` 
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td>
-                    <select>
-                        <option>🚌 BUS</option>
-                        <option>🚖 TAXI</option>
-                        <option>🛺 TRICYCLE</option>
-                        <option>🚋 TRAIN/LRT/MRT</option>
-                        <option>🚍 JEEP</option>
-                    </select>
-                </td>
-                <td><input type="number" value="0" oninput="calculateTotal()"></td>
-            `;
-            calculateTotal();
-        }
+  <script>
+    function calculateTotal() {
+      const table = document.getElementById('dataTable');
+      let travelTotal = 0;
+      for (let i = 1; i < table.rows.length; i++) {
+        const amtCell = table.rows[i].cells[3].querySelector('input');
+        const amt = parseFloat(amtCell.value) || 0;
+        travelTotal += amt;
+      }
 
-        function calculateTotal() {
-            let travelTotal = 0;
-            let amounts = document.querySelectorAll("#dataTable input[type='number']");
-            amounts.forEach(amount => {
-                travelTotal += Number(amount.value);
-            });
-            document.getElementById("travelAmount").innerText = travelTotal;
-            let mealAmount = Number(document.getElementById("mealAmount").value);
-            document.getElementById("totalAmount").innerText = travelTotal + mealAmount;
-        }
-    </script>
+      const meal = parseFloat(document.getElementById('mealAmount').value) || 0;
+      document.getElementById('travelAmount').innerText = travelTotal;
+      document.getElementById('totalAmount').innerText = travelTotal + meal;
+    }
+
+    function addRow() {
+      const table = document.getElementById('dataTable');
+      const row = table.insertRow();
+      row.innerHTML = `
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td>
+          <select>
+            <option>🚌 BUS</option>
+            <option>🚖 TAXI</option>
+            <option>🛺 TRICYCLE</option>
+            <option>🚋 TRAIN/LRT/MRT</option>
+            <option>🚍 JEEP</option>
+          </select>
+        </td>
+        <td><input type="number" value="0" oninput="calculateTotal()"></td>
+      `;
+    }
+
+    // Run total calculation on page load
+    window.onload = calculateTotal;
+  </script>
 </body>
 </html>
